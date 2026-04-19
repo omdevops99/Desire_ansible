@@ -6,3 +6,21 @@
     - name: print URL vraible
       ansible.builtin.debug:
          msg: "{{ URL }}"  
+
+- name: variables
+  hosts: localhost
+  vars:
+    URL1: example.com
+    URL2: example.com
+  tasks: 
+    - name: print URL vraible
+      ansible.builtin.debug:
+         msg: "{{ URL1 }}"           
+      vars:
+          URL: sample.com
+    - name: print URL vraible
+      ansible.builtin.debug:
+         msg: "{{ URL2 }}"           
+      vars:
+          URL2: sample.com        
+
