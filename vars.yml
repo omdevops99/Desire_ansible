@@ -22,5 +22,14 @@
       ansible.builtin.debug:
          msg: "{{ URL2 }}"           
       vars:
-          URL2: sample.com        
+          URL2: sample.com    
+- name: register the varaible
+  hosts: localhost
+  tasks:
+    - name: get the uptime
+      ansible.builtin.shell: uptime
+      register: uptime_output
+    - name: print the uptime
+      ansible.builtin.debug:
+        msg: "{{ uptime_output }}"              
 
