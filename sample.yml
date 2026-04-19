@@ -2,4 +2,4 @@
   hosts:
   tasks:
     - name: Ping test
-      ansble.builtin.ping:
+      ansible.builtin.ping:
